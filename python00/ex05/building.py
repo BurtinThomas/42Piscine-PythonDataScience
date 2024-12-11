@@ -1,5 +1,6 @@
 import sys
 
+
 def is_special_character(c):
     """
     Checks if a given character is a punctuation character.

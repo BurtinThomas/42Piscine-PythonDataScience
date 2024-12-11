@@ -2,10 +2,10 @@
 def all_thing_is_obj(object: any) -> int:
 
     listDictionnary = {
-        list: "list",
-        tuple: "tuple",
-        set: "set",
-        dict: "dict",
+        list: "List",
+        tuple: "Tuple",
+        set: "Set",
+        dict: "Dict",
         str: "str",
     }
 

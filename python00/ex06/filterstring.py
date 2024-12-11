@@ -1,6 +1,6 @@
 import sys
 
-checkArgsNumber = lambda arguments: len(arguments) == 3
+checkarg = lambda arguments: len(arguments) == 3
 
 
 def correct_string():
@@ -40,7 +40,7 @@ def main():
         AssertionError: If the arguments are invalid.
     """
     try:
-        if not checkArgsNumber(sys.argv) or not correct_string() or not correct_int():
+        if not checkarg(sys.argv) or not correct_string() or not correct_int():
             raise AssertionError("the arguments are bad")
         result = filterstring(sys.argv[1], int(sys.argv[2]))
         print(result)

@@ -26,8 +26,9 @@ def ft_filter(function, list):
         list: A new list containing only the elements
         for which the function returned True.
     """
-    newList = [n for n in list if function(n)]
-    return newList
+    if function:
+        return (i for i in list if function(i))
+    return (i for i in list if i)
 
 
 def main():
@@ -37,8 +38,8 @@ def main():
     then prints the resulting list.
     """
     tab = [1, 2, 3, 4, 5, 6]
-    nombres_pairs = ft_filter(isItEven, tab)
-    print(nombres_pairs)
+    evenNumbers = ft_filter(isItEven, tab)
+    print(list(evenNumbers))
 
 
 if __name__ == "__main__":
