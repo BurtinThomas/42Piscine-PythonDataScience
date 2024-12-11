@@ -1,18 +1,18 @@
 
 def all_thing_is_obj(object: any) -> int:
 
-    all_type = {
-        list : "list",
-        tuple : "tuple",
-        set : "set",
-        dict : "dict",
-        str : "is in the kitchen"
+    listDictionnary = {
+        list: "list",
+        tuple: "tuple",
+        set: "set",
+        dict: "dict",
+        str: "str",
     }
-    ob = type(object)
-    if (all_type.get(ob) == None):
+
+    if type(object) not in listDictionnary:
         print("Type not found")
-    elif(ob == str):
-        print(f"{object} {all_type[ob]} : {ob}")
+    elif(type(object) is str):
+        print(f"{object} is in the kitchen : {type(object)}")
     else:
-        print(f"{all_type[ob]} : {ob}")
+        print(f"{listDictionnary[type(object)]} : {type(object)}")
     return 42
