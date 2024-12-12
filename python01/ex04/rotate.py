@@ -4,6 +4,16 @@ import matplotlib.pyplot as plt
 
 
 def transpose(np_array, rows, columns):
+    """
+    Description:
+    Transposes a 2D NumPy array manually by flipping its rows and columns.
+    Parameters:
+        - np_array: A 2D NumPy array to be transposed.
+        - rows: The number of rows in the original array.
+        - columns: The number of columns in the original array.
+    Returns:
+        - numpy.ndarray: The transposed version of the input array.
+    """
     transposed = []
     for i in range(columns):
         new_row = []
@@ -14,6 +24,11 @@ def transpose(np_array, rows, columns):
 
 
 def main():
+    """
+    The main function demonstrates loading an image,
+    performing slicing and transposing operations,
+    and visualizing the processed image.
+    """
     try:
         image_array = ft_load("animal.jpeg")
         zoomed_img_array = image_array[100:500, 450:850, 0]

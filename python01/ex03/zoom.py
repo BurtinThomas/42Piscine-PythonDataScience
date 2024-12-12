@@ -4,6 +4,13 @@ import matplotlib.pyplot as plt
 
 
 def main():
+    """
+    The main function demonstrates loading an image,
+    performing slicing operations, and visualizing the sliced image.
+    It uses `ft_load` to load the image,
+    processes it to create a zoomed version,
+    and displays with Matplotlib.
+    """
     try:
         image_array = ft_load("animal.jpeg")
         print(image_array)

@@ -4,6 +4,14 @@ import os
 
 
 def ft_load(path: str) -> np.ndarray:
+    """
+    Loads an image from the given file pathand returns it as a NumPy array.
+    Parameters:
+        - path: The file path to the image.
+        Must be a string and a `.jpg` or `.jpeg` file.
+    Returns:
+        - np.ndarray: A NumPy array representing the image.
+    """
     try:
         if not isinstance(path, str):
             raise TypeError("Le chemin doit être une chaîne de caractères")

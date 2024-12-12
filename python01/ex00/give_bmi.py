@@ -1,13 +1,28 @@
-
 def checkList(liste, type):
+    """
+    Checks if all elements in a given list are of a specified type.
+    """
     return all(isinstance(element, type) for element in liste)
 
 
 def checkElement(liste):
+    """
+    Checks if all elements in a given list are positive numbers.
+    """
     return all(element > 0 for element in liste)
 
 
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+    """
+    Description:
+    Calculates the Body Mass Index (BMI) for a list of heights and weights.
+    Parameters:
+    - height (list[int | float]): A list of heights in meters.
+    - weight (list[int | float]): A list of weights in kilograms.
+    Returns:
+    - list[int | float]: A list of BMI values for each height-weight pair.
+    - list: An empty list if an exception occurs.
+    """
     try:
         if len(height) != len(weight):
             raise ValueError("height and weight must have same lenght.")
@@ -22,6 +37,21 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """
+    apply_limit(bmi, limit)
+    -----------------------
+    Description:
+        Compares BMI values to a specified limit and returns a boolean list.
+    Parameters:
+        - bmi (list[int | float]): A list of BMI values.
+        - limit (int): The threshold limit for comparison.
+    Returns:
+        - list: A list of booleans indicating if each BMI is above the limit.
+        - list: An empty list if an exception occurs.
+    Exceptions:
+        - TypeError: If the limit is not an integer.
+        - AssertionError: If BMI elements are not integers or floats.
+    """
     try:
         if not isinstance(limit, int):
             raise TypeError("Limit must be a int")
