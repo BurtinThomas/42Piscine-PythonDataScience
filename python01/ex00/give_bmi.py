@@ -14,7 +14,6 @@ def checkElement(liste):
 
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
     """
-    Description:
     Calculates the Body Mass Index (BMI) for a list of heights and weights.
     Parameters:
     - height (list[int | float]): A list of heights in meters.
@@ -38,10 +37,7 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """
-    apply_limit(bmi, limit)
-    -----------------------
-    Description:
-        Compares BMI values to a specified limit and returns a boolean list.
+    Compares BMI values to a specified limit and returns a boolean list.
     Parameters:
         - bmi (list[int | float]): A list of BMI values.
         - limit (int): The threshold limit for comparison.
