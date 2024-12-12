@@ -1,5 +1,6 @@
 import numpy
 
+
 def slice_me(family: list, start: int, end: int) -> list:
     try:
         if not isinstance(family, list) or not isinstance(start, int) or not isinstance(end, int):
@@ -10,6 +11,6 @@ def slice_me(family: list, start: int, end: int) -> list:
         print(f"My shape is : {numpy_array.shape}")
         print(f"My new shape is : {numpy_array[start:end].shape}")
         return numpy_array[start:end].tolist()
-    
+
     except Exception as error:
-        print(f"{Exception.__name__} : {error}")
+        print(f"{type(error).__name__} : {error}")

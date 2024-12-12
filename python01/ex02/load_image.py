@@ -1,6 +1,7 @@
-from PIL import Image 
+from PIL import Image
 import numpy as np
 import os
+
 
 def ft_load(path: str) -> np.ndarray:
     try:
@@ -14,7 +15,6 @@ def ft_load(path: str) -> np.ndarray:
         image_array = np.array(image)
         print(f"The shape of image is: {image_array.shape}")
         return image_array
-    
+
     except Exception as error:
         print(f"{type(error).__name__} : {error}")
-

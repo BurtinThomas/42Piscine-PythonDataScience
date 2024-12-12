@@ -1,19 +1,21 @@
 
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[float]:
+def checkList(liste, type):
+    return all(isinstance(element, type) for element in liste)
+
+
+def checkElement(liste):
+    return all(element > 0 for element in liste)
+
+
+def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
     try:
         if len(height) != len(weight):
-            raise ValueError("height and weight must have same lenght")
-        
-        new_tab = []
-        for h, w in zip(height, weight):
-            if not isinstance(h, (int, float)) or not isinstance(w, (int, float)):
-                raise TypeError("Height and weight must be integers or floats.")
-            if h <= 0 or w <= 0:
-                raise ValueError("Height and weight values must be positive.")
-            bmi = w / (h ** 2)
-            new_tab.append(bmi)
-        return new_tab
-
+            raise ValueError("height and weight must have same lenght.")
+        if not checkList(height, (int, float)) or not checkList(weight, (int, float)):
+            raise AssertionError("Height and weight must be integers or floats.")
+        if not checkElement(height) or not checkElement(weight):
+            raise ValueError("Element must be positive.")
+        return [w / (h * h) for w, h in zip(weight, height)]
     except Exception as error:
         print(f"{Exception.__name__} : {error}")
         return []
@@ -23,13 +25,9 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     try:
         if not isinstance(limit, int):
             raise TypeError("Limit must be a int")
-        new_tab = []
-        for value in bmi:
-            if not isinstance(value, (int, float)):
-                raise TypeError("La liste dois contenir uniquement des entiers ou des flottants.")
-            new_tab.append(value > limit)
-        return new_tab
-
-    except TypeError as error:
-        print(error)
+        if not checkList(bmi, (int, float)):
+            raise AssertionError("bmi must be integers or floats.")
+        return [i > limit for i in bmi]
+    except Exception as error:
+        print(f"{Exception.__name__} : {error}")
         return []

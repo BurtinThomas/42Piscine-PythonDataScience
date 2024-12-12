@@ -1,12 +1,14 @@
 import numpy
 from PIL import Image
 
+
 def ft_invert(array):
     """
     Inverts the color of the image received.
     """
     image = 255 - array
     Image.fromarray(image).show()
+
 
 def ft_red(array):
     """
@@ -17,6 +19,7 @@ def ft_red(array):
     arrayRed[:, :, 0] = onlyRedChannel
     Image.fromarray(arrayRed).show()
 
+
 def ft_green(array):
     """
     Keeps only the green color channel of the image.
@@ -26,6 +29,7 @@ def ft_green(array):
     arrayGreen[:, :, 1] = onlyGreenChannel
     Image.fromarray(arrayGreen).show()
 
+
 def ft_blue(array):
     """
     Keeps only the blue color channel of the image.
@@ -34,6 +38,7 @@ def ft_blue(array):
     arrayBlue = numpy.zeros_like(array)
     arrayBlue[:, :, 2] = onlyBlueChannel
     Image.fromarray(arrayBlue).show()
+
 
 def ft_grey(array):
     """
@@ -47,5 +52,4 @@ def ft_grey(array):
     arrayGrey[:, :, 0] = grey_channel
     arrayGrey[:, :, 1] = grey_channel
     arrayGrey[:, :, 2] = grey_channel
-    
     Image.fromarray(arrayGrey).show()
