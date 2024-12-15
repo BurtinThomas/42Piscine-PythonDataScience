@@ -1,17 +1,20 @@
 import pandas
-import os
+
 
 def load(path: str):
+    """
+    Charge un fichier CSV dans un DataFrame Pandas.
+    Args:
+        path (str): Le chemin du fichier CSV à charger.
+    Returns:
+        pandas.DataFrame: Le DataFrame contenant les données du fichier CSV
+        si le chargement réussit.
+        None: Si une erreur se produit lors du chargement.
+    """
     try:
-        if not isinstance(path, str):
-            raise TypeError("Le chemin doit être une chaîne de caractères")
-        if not path.lower().endswith((".csv")):
-            raise AssertionError("put only csv file")
-        if not os.path.exists(path):
-            raise FileNotFoundError(f"Le fichier {path} n'existe pas.")
-        dataset = pandas.read_csv(path)
-        print(f"Loading dataset of dimensions {dataset.shape}")
-        return dataset
+        df = pandas.read_csv(path)
+        print(f"Loading dataset of dimensions {df.shape}")
+        return df
     except Exception as error:
-        print(f"{Exception.__name__} : {error}") 
+        print(f"{Exception.__name__} : {error}")
         return None
