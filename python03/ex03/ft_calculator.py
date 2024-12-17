@@ -1,23 +1,20 @@
 
 class calculator:
-    def __init__(self, vector):
-        self.vector = vector
-    
-    def __add__(self, object):
-        self.vector = [i + object for i in self.vector]
-        print(self.vector)
-    
-    def __mul__(self, object):
-        self.vector = [i * object for i in self.vector]
-        print(self.vector)
-    
-    def __sub__(self, object):
-        self.vector = [i - object for i in self.vector]
-        print(self.vector)
-    
-    def __truediv__(self, object):
-        if object == 0:
-            print("Division by zero is not allowed.")
-            return
-        self.vector = [i / object for i in self.vector]
-        print(self.vector)
+    def __init__(self, list):
+        self.list = list
+
+    def __add__(self, object) -> None:
+        self.list = [i + object for i in self.list]
+        print(self.list)
+
+    def __mul__(self, object) -> None:
+        self.list = [i * object for i in self.list]
+        print(self.list)
+
+    def __sub__(self, object) -> None:
+        self.list = [i - object for i in self.list]
+        print(self.list)
+
+    def __truediv__(self, object) -> None:
+        self.list = [i / object for i in self.list]
+        print(self.list)
